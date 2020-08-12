@@ -1,10 +1,21 @@
 <template>
-    <div></div>
+    <div>
+        <Header />
+        <!-- <Filters /> -->
+        <!-- <Gallery /> -->
+    </div>
 </template>
 
 <script>
+import Header from "@/components/Header.vue";
+// import Filters from "@/components/Filters.vue";
+// import Gallery from "@/components/Home.vue";
+
 export default {
     name: "Home",
+    components: {
+        Header
+    },
     props: {
         msg: String
     }
