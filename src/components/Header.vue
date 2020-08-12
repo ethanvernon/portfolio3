@@ -58,11 +58,12 @@ div > a > img {
 }
 
 h1 {
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
   margin-top: 0rem;
 }
 
 h3 {
+  font-size: 1.5rem;
   margin-top: 0;
   margin-bottom: 0;
 }

@@ -37,4 +37,11 @@ export default {
   max-width: 1080px;
   margin: auto;
 }
+
+// Custom variables go here
+$primary: #1bbcf0;
+// Import Bulma and Buefy styles
+@import "~bulma/sass/utilities/_all";
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
 </style>
