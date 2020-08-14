@@ -39,7 +39,7 @@ html,
 body {
   font-size: 14.5px;
   // font-family: "Montserrat", sans-serif;
-  font-family: "Arvo", serif;
-  // font-family: "Bitter", serif;
+  // font-family: "Arvo", serif;
+  font-family: "Bitter", serif;
 }
 </style>
