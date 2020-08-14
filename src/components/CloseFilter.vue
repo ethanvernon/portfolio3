@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-3px cursor-pointer">
+  <div class="pb-3px mx-2 cursor-pointer">
     <vue-fontawesome icon="times" class="transition" />
   </div>
 </template>
@@ -22,6 +22,11 @@ export default {
 <style scoped lang="scss">
 .pb-3px {
   padding-bottom: 3px;
+}
+
+.mx-2 {
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .cursor-pointer {

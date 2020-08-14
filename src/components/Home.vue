@@ -7,6 +7,9 @@
       <div v-else class="flex-center">
         <ProjectFilter v-if="currentFilter == 'project'" />
         <CountryFilter v-if="currentFilter == 'country'" />
+        <LanguageFilter v-if="currentFilter == 'language'" />
+        <FrameworkFilter v-if="currentFilter == 'framework'" />
+        <TeamSizeFilter v-if="currentFilter == 'team size'" />
         <CloseFilter />
       </div>
     </div>
@@ -25,6 +28,9 @@ import RowFilters from "@/components/RowFilters.vue";
 import ProjectCount from "@/components/ProjectCount.vue";
 import ProjectFilter from "@/components/ProjectFilter.vue";
 import CountryFilter from "@/components/CountryFilter.vue";
+import LanguageFilter from "@/components/LanguageFilter.vue";
+import FrameworkFilter from "@/components/FrameworkFilter.vue";
+import TeamSizeFilter from "@/components/TeamSizeFilter.vue";
 import CloseFilter from "@/components/CloseFilter.vue";
 
 export default {
@@ -38,13 +44,16 @@ export default {
     ProjectFilter,
     CloseFilter,
     CountryFilter,
+    LanguageFilter,
+    FrameworkFilter,
+    TeamSizeFilter,
   },
   props: {
     msg: String,
   },
   data() {
     return {
-      currentFilter: "country",
+      currentFilter: "team size",
     };
   },
 };
