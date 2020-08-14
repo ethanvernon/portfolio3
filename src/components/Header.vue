@@ -4,7 +4,7 @@
       <h1>Ethan Vernon</h1>
       <h3>Full-stack Web Developer</h3>
     </div>
-    <div style="position:absolute;top:0px;right:0px">
+    <div class="mobile-hide" style="position:absolute;top:0px;right:16px">
       <a href="https://linkedin.com/in/ethanvernon" target="blank">
         <img src="../assets/ethan.jpeg" />
       </a>
@@ -69,5 +69,11 @@ h3 {
 
 .mb-2 {
   margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .mobile-hide {
+    display: none;
+  }
 }
 </style>

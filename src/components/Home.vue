@@ -1,11 +1,14 @@
 <template>
   <div>
     <Header />
-    <RowFilters/>
+    <div class="filter-container">
+      <RowFilters />
+      <ProjectCount v-if="!currentFilter" />
+      <!-- <ProjectFilter v-else-if='currentFilter == 'project'/> -->
+    </div>
     <div class="flex-row">
       <!--<Filters style="width:20%" />-->
-      <Gallery style="width:74%" />
-      <div style="width:6%" />
+      <Gallery style="max-width:799px" />
     </div>
   </div>
 </template>
@@ -15,6 +18,7 @@ import Header from "@/components/Header.vue";
 import Filters from "@/components/Filters.vue";
 import Gallery from "@/components/Gallery.vue";
 import RowFilters from "@/components/RowFilters.vue";
+import ProjectCount from "@/components/ProjectCount.vue";
 
 export default {
   name: "Home",
@@ -22,11 +26,17 @@ export default {
     Header,
     Gallery,
     Filters,
-    RowFilters
+    RowFilters,
+    ProjectCount,
   },
   props: {
-    msg: String
-  }
+    msg: String,
+  },
+  data() {
+    return {
+      currentFilter: null,
+    };
+  },
 };
 </script>
 
@@ -37,5 +47,10 @@ export default {
   //   align-items: center;
   justify-content: center;
   flex-direction: row;
+}
+
+.filter-container {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 </style>
