@@ -2,11 +2,11 @@
   <div>
     <p>
       Viewing
-      <span class="underline" @click="setActiveFilter('project')">ALL</span> projects made in
-      <span class="underline" @click="setActiveFilter('country')">ANY</span> country in
-      <span class="underline" @click="setActiveFilter('language')">ALL LANGUAGES</span>, with
-      <span class="underline" @click="setActiveFilter('framework')">ALL FRAMEWORKS</span>, with
-      <span class="underline" @click="setActiveFilter('team size')">ANY # OF</span> developers
+      <span class="underline ls-1" @click="setActiveFilter('project')">ALL</span> projects made in
+      <span class="underline ls-1" @click="setActiveFilter('country')">ANY</span> country in
+      <span class="underline ls-1" @click="setActiveFilter('language')">ALL LANGUAGES</span>, with
+      <span class="underline ls-1" @click="setActiveFilter('framework')">ALL FRAMEWORKS</span>, with
+      <span class="underline ls-1" @click="setActiveFilter('team size')">ANY # OF</span> developers
     </p>
   </div>
 </template>
@@ -45,5 +45,9 @@ span {
 
 span:hover {
   color: #222;
+}
+
+.ls-1 {
+  letter-spacing: 1px;
 }
 </style>

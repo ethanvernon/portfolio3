@@ -8,7 +8,7 @@
           <ProjectCount class="absolute" v-if="!activeFilter" />
         </transition>
         <transition name="fade">
-          <div class="absolute flex-center" v-if="activeFilter">
+          <div class="absolute flex-center ls-2" v-if="activeFilter">
             <ProjectFilter v-if="activeFilter == 'project'" />
             <CountryFilter v-if="activeFilter == 'country'" />
             <LanguageFilter v-if="activeFilter == 'language'" />
@@ -79,8 +79,8 @@ export default {
 }
 
 .filter-container {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
 }
 
 .flex-center {
@@ -106,5 +106,9 @@ export default {
 
 .absolute {
   position: absolute;
+}
+
+.ls-2 {
+  letter-spacing: 2px;
 }
 </style>

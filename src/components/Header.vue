@@ -59,12 +59,15 @@ div > a > img {
 h1 {
   font-size: 3rem;
   margin-top: 0rem;
+  line-height: 3.8rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.5rem;
   margin-top: 0;
   margin-bottom: 0;
+  line-height: 1.9rem;
 }
 
 .mb-2 {
@@ -72,7 +75,9 @@ h3 {
 }
 
 .header-family {
-  font-family: "Rubik", sans-serif;
+  // font-family: "Rubik", sans-serif;
+  // font-family: "Roboto Slab", serif;
+  font-family: "Mulish", sans-serif;
 }
 
 @media only screen and (max-width: 500px) {
