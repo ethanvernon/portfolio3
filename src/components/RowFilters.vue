@@ -2,20 +2,25 @@
   <div>
     <p>
       Viewing
-      <span class="underline">ALL</span> projects made in
-      <span class="underline">ANY</span> country in
-      <span class="underline">ALL LANGUAGES</span>, with
-      <span class="underline">ALL FRAMEWORKS</span>, with
-      <span class="underline">ANY # OF</span> developers
+      <span class="underline" @click="setActiveFilter('project')">ALL</span> projects made in
+      <span class="underline" @click="setActiveFilter('country')">ANY</span> country in
+      <span class="underline" @click="setActiveFilter('language')">ALL LANGUAGES</span>, with
+      <span class="underline" @click="setActiveFilter('framework')">ALL FRAMEWORKS</span>, with
+      <span class="underline" @click="setActiveFilter('team size')">ANY # OF</span> developers
     </p>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
-  name: "Home",
+  name: "RowFilters",
   components: {},
   props: {},
+  methods: {
+    ...mapActions(["setActiveFilter"]),
+  },
 };
 </script>
 

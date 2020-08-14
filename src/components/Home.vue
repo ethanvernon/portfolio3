@@ -3,14 +3,20 @@
     <Header />
     <div class="filter-container">
       <RowFilters />
-      <ProjectCount v-if="!currentFilter" />
-      <div v-else class="flex-center">
-        <ProjectFilter v-if="currentFilter == 'project'" />
-        <CountryFilter v-if="currentFilter == 'country'" />
-        <LanguageFilter v-if="currentFilter == 'language'" />
-        <FrameworkFilter v-if="currentFilter == 'framework'" />
-        <TeamSizeFilter v-if="currentFilter == 'team size'" />
-        <CloseFilter />
+      <div class="flex-center relative">
+        <transition name="fade">
+          <ProjectCount class="absolute" v-if="!activeFilter" />
+        </transition>
+        <transition name="fade">
+          <div class="absolute flex-center" v-if="activeFilter">
+            <ProjectFilter v-if="activeFilter == 'project'" />
+            <CountryFilter v-if="activeFilter == 'country'" />
+            <LanguageFilter v-if="activeFilter == 'language'" />
+            <FrameworkFilter v-if="activeFilter == 'framework'" />
+            <TeamSizeFilter v-if="activeFilter == 'team size'" />
+            <CloseFilter />
+          </div>
+        </transition>
       </div>
     </div>
     <div class="flex-row">
@@ -21,6 +27,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Header from "@/components/Header.vue";
 import Filters from "@/components/Filters.vue";
 import Gallery from "@/components/Gallery.vue";
@@ -51,10 +58,13 @@ export default {
   props: {
     msg: String,
   },
-  data() {
-    return {
-      currentFilter: "team size",
-    };
+  mounted() {
+    console.log(this);
+  },
+  computed: {
+    activeFilter() {
+      return this.$store.state.activeFilter;
+    },
   },
 };
 </script>
@@ -78,5 +88,23 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: row;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.relative {
+  position: relative;
+  height: 4rem;
+}
+
+.absolute {
+  position: absolute;
 }
 </style>

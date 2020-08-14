@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     changeActive(filter) {
+      console.log("changing project filter");
       this.active = filter;
     },
   },

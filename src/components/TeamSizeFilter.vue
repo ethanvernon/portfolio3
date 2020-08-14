@@ -9,24 +9,17 @@
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='vue'  ? 'underline' : 'no-underline'"
-      @click="changeActive('vue')"
+      :class="active=='one'  ? 'underline' : 'no-underline'"
+      @click="changeActive('one')"
     >
-      <p>1</p>
+      <p>ONE</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='react'  ? 'underline' : 'no-underline'"
-      @click="changeActive('react')"
+      :class="active=='two'  ? 'underline' : 'no-underline'"
+      @click="changeActive('two')"
     >
-      <p>2</p>
-    </div>
-    <div
-      class="margin-1 cursor-pointer weight-600"
-      :class="active=='jquery'  ? 'underline' : 'no-underline'"
-      @click="changeActive('jquery')"
-    >
-      <p>3-5</p>
+      <p>TWO</p>
     </div>
   </div>
 </template>

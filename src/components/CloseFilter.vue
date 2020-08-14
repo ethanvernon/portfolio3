@@ -1,12 +1,14 @@
 <template>
-  <div class="pb-3px mx-2 cursor-pointer">
+  <div class="pb-3px mx-2 cursor-pointer" @click="setActiveFilter(null)">
     <vue-fontawesome icon="times" class="transition" />
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
-  name: "ProjectFilter",
+  name: "CloseFilter",
   components: {},
   props: {},
   data() {
@@ -14,7 +16,9 @@ export default {
       spin: false,
     };
   },
-  methods: {},
+  methods: {
+    ...mapActions(["setActiveFilter"]),
+  },
 };
 </script>
 
@@ -37,7 +41,7 @@ export default {
   transition: transform 0.1s linear;
 }
 
-.transition:hover {
+div:hover > .transition {
   transform: rotate(180deg);
 }
 </style>
