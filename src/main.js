@@ -4,18 +4,12 @@ import router from "./router";
 import store from "./store";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import Buefy from "buefy";
 
-import { faFilter, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faFilter, faChevronDown, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faFilter, faChevronDown);
+library.add(faFilter, faChevronDown, faTimes);
 
 Vue.component("vue-fontawesome", FontAwesomeIcon);
-
-Vue.use(Buefy, {
-  defaultIconComponent: "vue-fontawesome",
-  defaultIconPack: "fas"
-});
 
 Vue.config.productionTip = false;
 

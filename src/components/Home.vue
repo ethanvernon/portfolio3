@@ -4,7 +4,10 @@
     <div class="filter-container">
       <RowFilters />
       <ProjectCount v-if="!currentFilter" />
-      <!-- <ProjectFilter v-else-if='currentFilter == 'project'/> -->
+      <div v-else class="flex-center">
+        <ProjectFilter v-if="currentFilter == 'project'" />
+        <CloseFilter />
+      </div>
     </div>
     <div class="flex-row">
       <!--<Filters style="width:20%" />-->
@@ -19,6 +22,8 @@ import Filters from "@/components/Filters.vue";
 import Gallery from "@/components/Gallery.vue";
 import RowFilters from "@/components/RowFilters.vue";
 import ProjectCount from "@/components/ProjectCount.vue";
+import ProjectFilter from "@/components/ProjectFilter.vue";
+import CloseFilter from "@/components/CloseFilter.vue";
 
 export default {
   name: "Home",
@@ -28,13 +33,15 @@ export default {
     Filters,
     RowFilters,
     ProjectCount,
+    ProjectFilter,
+    CloseFilter,
   },
   props: {
     msg: String,
   },
   data() {
     return {
-      currentFilter: null,
+      currentFilter: "project",
     };
   },
 };
@@ -52,5 +59,12 @@ export default {
 .filter-container {
   margin-top: 4rem;
   margin-bottom: 2rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 </style>

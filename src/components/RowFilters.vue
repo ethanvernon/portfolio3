@@ -24,6 +24,7 @@ export default {
 p {
   text-align: center;
   margin: 1.5rem auto;
+  line-height: 1.5rem;
   color: #555;
 }
 
@@ -34,7 +35,7 @@ span {
 
 .underline {
   border-bottom: 1px DASHED #1bbcf0;
-  padding-bottom: 3px;
+  padding-bottom: 1.5px;
 }
 
 span:hover {

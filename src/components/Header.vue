@@ -1,6 +1,6 @@
 <template>
   <div class="margin-1 width-100 mb-2" style="position:relative">
-    <div class="align-center">
+    <div class="align-center header-family">
       <h1>Ethan Vernon</h1>
       <h3>Full-stack Web Developer</h3>
     </div>
@@ -69,6 +69,10 @@ h3 {
 
 .mb-2 {
   margin-bottom: 2rem;
+}
+
+.header-family {
+  font-family: "Rubik", sans-serif;
 }
 
 @media only screen and (max-width: 500px) {

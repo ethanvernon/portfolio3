@@ -5,10 +5,8 @@
 </template>
 
 <script>
-// import Header from "@/components/Header.vue";
-
 export default {
-  name: "Home",
+  name: "ProjectCount",
   components: {},
   props: {},
 };
@@ -24,7 +22,6 @@ export default {
 
   p {
     letter-spacing: 2px;
-    font-size: 0.9rem;
   }
 }
 </style>
