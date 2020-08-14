@@ -1,11 +1,10 @@
 <template>
-  <div class="margin-1 flex-row width-100 mb-2">
-    <div style="width:20%" />
-    <div class="align-center" style="width:74%">
+  <div class="margin-1 width-100 mb-2" style="position:relative">
+    <div class="align-center">
       <h1>Ethan Vernon</h1>
       <h3>Full-stack Web Developer</h3>
     </div>
-    <div style="width:6%; display:flex; align-items:center;">
+    <div style="position:absolute;top:0px;right:0px">
       <a href="https://linkedin.com/in/ethanvernon" target="blank">
         <img src="../assets/ethan.jpeg" />
       </a>

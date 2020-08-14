@@ -1,8 +1,9 @@
 <template>
   <div>
     <Header />
+    <RowFilters/>
     <div class="flex-row">
-      <Filters style="width:20%" />
+      <!--<Filters style="width:20%" />-->
       <Gallery style="width:74%" />
       <div style="width:6%" />
     </div>
@@ -13,13 +14,15 @@
 import Header from "@/components/Header.vue";
 import Filters from "@/components/Filters.vue";
 import Gallery from "@/components/Gallery.vue";
+import RowFilters from "@/components/RowFilters.vue";
 
 export default {
   name: "Home",
   components: {
     Header,
     Gallery,
-    Filters
+    Filters,
+    RowFilters
   },
   props: {
     msg: String
