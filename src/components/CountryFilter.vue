@@ -9,24 +9,24 @@
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='professional'  ? 'underline' : 'no-underline'"
-      @click="changeActive('professional')"
+      :class="active=='china'  ? 'underline' : 'no-underline'"
+      @click="changeActive('china')"
     >
-      <p>PROFESSIONAL</p>
+      <p>CHINA</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='personal'  ? 'underline' : 'no-underline'"
-      @click="changeActive('personal')"
+      :class="active=='usa'  ? 'underline' : 'no-underline'"
+      @click="changeActive('usa')"
     >
-      <p>PERSONAL</p>
+      <p>USA</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ProjectFilter",
+  name: "CountryFilter",
   components: {},
   props: {},
   data() {

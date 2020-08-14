@@ -6,6 +6,7 @@
       <ProjectCount v-if="!currentFilter" />
       <div v-else class="flex-center">
         <ProjectFilter v-if="currentFilter == 'project'" />
+        <CountryFilter v-if="currentFilter == 'country'" />
         <CloseFilter />
       </div>
     </div>
@@ -23,6 +24,7 @@ import Gallery from "@/components/Gallery.vue";
 import RowFilters from "@/components/RowFilters.vue";
 import ProjectCount from "@/components/ProjectCount.vue";
 import ProjectFilter from "@/components/ProjectFilter.vue";
+import CountryFilter from "@/components/CountryFilter.vue";
 import CloseFilter from "@/components/CloseFilter.vue";
 
 export default {
@@ -35,13 +37,14 @@ export default {
     ProjectCount,
     ProjectFilter,
     CloseFilter,
+    CountryFilter,
   },
   props: {
     msg: String,
   },
   data() {
     return {
-      currentFilter: "project",
+      currentFilter: "country",
     };
   },
 };

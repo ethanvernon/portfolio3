@@ -29,7 +29,7 @@ export default {
 }
 
 .transition {
-  transition: transform 0.2s linear;
+  transition: transform 0.1s linear;
 }
 
 .transition:hover {
