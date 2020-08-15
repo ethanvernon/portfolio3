@@ -3,13 +3,27 @@
     <p>
       Viewing
       <span
-        class="underline ls-1 uppercase"
+        class="underline ls-1 uppercase bold"
         @click="setActiveFilter('project')"
       >{{projectFilter}}</span> projects made in
-      <span class="underline ls-1" @click="setActiveFilter('country')">ANY</span> country in
-      <span class="underline ls-1" @click="setActiveFilter('language')">ALL LANGUAGES</span>, with
-      <span class="underline ls-1" @click="setActiveFilter('framework')">ALL FRAMEWORKS</span>, with
-      <span class="underline ls-1" @click="setActiveFilter('team size')">ANY # OF</span> developers
+      <span v-if="countryFilter=='usa'">{{" "}}the{{" "}}</span>
+      <span
+        class="underline ls-1 uppercase bold"
+        @click="setActiveFilter('country')"
+      >{{countryFilter}}</span>
+      <span v-if="countryFilter=='any'">{{" "}}country</span>, in
+      <span
+        class="underline ls-1 uppercase bold"
+        @click="setActiveFilter('language')"
+      >ALL LANGUAGES</span>, with
+      <span
+        class="underline ls-1 uppercase bold"
+        @click="setActiveFilter('framework')"
+      >ALL FRAMEWORKS</span>, with
+      <span
+        class="underline ls-1 uppercase bold"
+        @click="setActiveFilter('team size')"
+      >ANY # OF</span> developers
     </p>
   </div>
 </template>
@@ -24,6 +38,9 @@ export default {
   computed: {
     projectFilter() {
       return this.$store.state.projectFilter;
+    },
+    countryFilter() {
+      return this.$store.state.countryFilter;
     },
   },
   methods: {
@@ -41,7 +58,7 @@ p {
   color: #555;
 }
 
-span {
+.bold {
   font-weight: 800;
   cursor: pointer;
 }

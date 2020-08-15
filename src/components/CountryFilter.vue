@@ -2,22 +2,22 @@
   <div class="flex-center color-gray">
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='all' ? 'underline' : 'no-underline'"
-      @click="changeActive('all')"
+      :class="countryFilter=='any' ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'country', filterValue:'any'})"
     >
       <p>ALL</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='china'  ? 'underline' : 'no-underline'"
-      @click="changeActive('china')"
+      :class="countryFilter=='china'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'country', filterValue:'china'})"
     >
       <p>CHINA</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='usa'  ? 'underline' : 'no-underline'"
-      @click="changeActive('usa')"
+      :class="countryFilter=='usa'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'country', filterValue:'usa'})"
     >
       <p>USA</p>
     </div>
@@ -25,19 +25,19 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "CountryFilter",
   components: {},
   props: {},
-  data() {
-    return {
-      active: "all",
-    };
+  computed: {
+    countryFilter() {
+      return this.$store.state.countryFilter;
+    },
   },
   methods: {
-    changeActive(filter) {
-      this.active = filter;
-    },
+    ...mapActions(["setFilter"]),
   },
 };
 </script>
