@@ -10,7 +10,7 @@
       <span
         class="underline ls-1 uppercase bold"
         @click="setActiveFilter('country')"
-      >{{countryFilter}}</span>, in
+      >{{countryFilter}}</span>, with
       <span
         class="underline ls-1 uppercase bold"
         @click="setActiveFilter('language')"

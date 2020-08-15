@@ -28,6 +28,20 @@
     >
       <p>PYTHON</p>
     </div>
+    <div
+      class="margin-1 cursor-pointer weight-600"
+      :class="languageFilter=='html'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'language', filterValue:'html'})"
+    >
+      <p>HTML</p>
+    </div>
+    <div
+      class="margin-1 cursor-pointer weight-600"
+      :class="languageFilter=='css'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'language', filterValue:'css'})"
+    >
+      <p>CSS</p>
+    </div>
   </div>
 </template>
 
