@@ -26,7 +26,7 @@ projects.end_date,
 projects.team_size,
 projects.project_id,
 projects.is_pro,
-GROUP_CONCAT( techs.tech_name SEPARATOR ', ') technologies,
+GROUP_CONCAT(DISTINCT techs.tech_name SEPARATOR ', ') technologies,
 GROUP_CONCAT(DISTINCT countries.country_name SEPARATOR ', ') countries
 FROM
 `projects`
@@ -34,6 +34,7 @@ JOIN project_techs ON projects.project_id = project_techs.project_id
 JOIN techs ON techs.tech_id = project_techs.tech_id
 JOIN project_countries ON projects.project_id = project_countries.project_id
 JOIN countries ON countries.country_id = project_countries.country_id
+GROUP BY projects.project_id
 ");
 
 $sth = mysqli_query($conn, "SELECT * FROM projects ORDER BY name");
