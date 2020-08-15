@@ -2,22 +2,22 @@
   <div class="flex-center color-gray">
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='all' ? 'underline' : 'no-underline'"
-      @click="changeActive('all')"
+      :class="teamSizeFilter=='any # of' ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'teamSize', filterValue:'any # of'})"
     >
-      <p>ALL</p>
+      <p>ANY # OF</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='one'  ? 'underline' : 'no-underline'"
-      @click="changeActive('one')"
+      :class="teamSizeFilter=='one'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'teamSize', filterValue:'one'})"
     >
       <p>ONE</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='two'  ? 'underline' : 'no-underline'"
-      @click="changeActive('two')"
+      :class="teamSizeFilter=='two'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'teamSize', filterValue:'two'})"
     >
       <p>TWO</p>
     </div>
@@ -25,19 +25,19 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "TeamSizeFilter",
   components: {},
   props: {},
-  data() {
-    return {
-      active: "all",
-    };
+  computed: {
+    teamSizeFilter() {
+      return this.$store.state.teamSizeFilter;
+    },
   },
   methods: {
-    changeActive(filter) {
-      this.active = filter;
-    },
+    ...mapActions(["setFilter"]),
   },
 };
 </script>

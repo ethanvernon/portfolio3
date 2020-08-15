@@ -19,10 +19,14 @@
         class="underline ls-1 uppercase bold"
         @click="setActiveFilter('framework')"
       >{{frameworkFilter}}</span>, with
+      <!-- prettier-ignore -->
+      <!-- prettier-ignore-attribute -->
       <span
         class="underline ls-1 uppercase bold"
         @click="setActiveFilter('team size')"
-      >ANY # OF</span> developers
+      >{{teamSizeFilter}}</span>
+      <span v-if="teamSizeFilter!='one'">{{" "}}developers.</span>
+      <span v-else>{{" "}}developer.</span>
     </p>
   </div>
 </template>
@@ -46,6 +50,9 @@ export default {
     },
     frameworkFilter() {
       return this.$store.state.frameworkFilter;
+    },
+    teamSizeFilter() {
+      return this.$store.state.teamSizeFilter;
     },
   },
   methods: {
