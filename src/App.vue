@@ -16,32 +16,44 @@ export default {
   },
   mounted() {
     let localThis = this;
+
+    if (
+      location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1"
+    ) {
+      this.setProjectData([
+        {
+          name: "Tribute Page",
+          description:
+            "An HTML/CSS project in CodePen with a timeline detailing the life of Goku.",
+          start_date: "2018-05-04",
+          end_date: "2018-05-04",
+          team_size: "1",
+          project_id: "1",
+        },
+      ]);
+
+      this.setProjectFilteredData([
+        {
+          name: "Tribute Page",
+          description:
+            "An HTML/CSS project in CodePen with a timeline detailing the life of Goku.",
+          start_date: "2018-05-04",
+          end_date: "2018-05-04",
+          team_size: "1",
+          project_id: "1",
+        },
+      ]);
+
+      return;
+    }
+
     axios
       .get("test.php")
       .then(function (response) {
         console.log("response:", response.data);
-        localThis.setProjectData([
-          {
-            name: "Tribute Page",
-            description:
-              "An HTML/CSS project in CodePen with a timeline detailing the life of Goku.",
-            start_date: "2018-05-04",
-            end_date: "2018-05-04",
-            team_size: "1",
-            project_id: "1",
-          },
-        ]);
-        localThis.setProjectFilteredData([
-          {
-            name: "Tribute Page",
-            description:
-              "An HTML/CSS project in CodePen with a timeline detailing the life of Goku.",
-            start_date: "2018-05-04",
-            end_date: "2018-05-04",
-            team_size: "1",
-            project_id: "1",
-          },
-        ]);
+        localThis.setProjectData(response.data);
+        localThis.setProjectFilteredData(response.data);
       })
       .catch(function (error) {
         console.log(error);
