@@ -18,7 +18,7 @@
       <span
         class="underline ls-1 uppercase bold"
         @click="setActiveFilter('framework')"
-      >ALL FRAMEWORKS</span>, with
+      >{{frameworkFilter}}</span>, with
       <span
         class="underline ls-1 uppercase bold"
         @click="setActiveFilter('team size')"
@@ -43,6 +43,9 @@ export default {
     },
     languageFilter() {
       return this.$store.state.languageFilter;
+    },
+    frameworkFilter() {
+      return this.$store.state.frameworkFilter;
     },
   },
   methods: {

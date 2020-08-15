@@ -8,13 +8,16 @@ export default new Vuex.Store({
     activeFilter: null,
     projectFilter: 'all',
     countryFilter: 'any country',
-    languageFilter: 'any language'
+    languageFilter: 'any language',
+    frameworkFilter: 'any framework'
+
   },
   mutations: {
     setActiveFilter: (state, filter) => (state.activeFilter = filter),
     setProjectFilter: (state, val) => (state.projectFilter = val),
     setCountryFilter: (state, val) => (state.countryFilter = val),
     setLanguageFilter: (state, val) => (state.languageFilter = val),
+    setFrameworkFilter: (state, val) => (state.frameworkFilter = val),
   },
   actions: {
     setActiveFilter({ commit }, data) {
@@ -32,6 +35,9 @@ export default new Vuex.Store({
           break;
         case 'language':
           commit('setLanguageFilter', data.filterValue)
+          break;
+        case 'framework':
+          commit('setFrameworkFilter', data.filterValue)
           break;
         default:
           return

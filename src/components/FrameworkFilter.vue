@@ -2,29 +2,29 @@
   <div class="flex-center color-gray">
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='all' ? 'underline' : 'no-underline'"
-      @click="changeActive('all')"
+      :class="frameworkFilter=='any framework' ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'framework', filterValue:'any framework'})"
     >
-      <p>ALL</p>
+      <p>ANY FRAMEWORK</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='vue'  ? 'underline' : 'no-underline'"
-      @click="changeActive('vue')"
+      :class="frameworkFilter=='vue'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'framework', filterValue:'vue.js'})"
     >
       <p>VUE.JS</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='react'  ? 'underline' : 'no-underline'"
-      @click="changeActive('react')"
+      :class="frameworkFilter=='react'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'framework', filterValue:'react'})"
     >
       <p>REACT</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='jquery'  ? 'underline' : 'no-underline'"
-      @click="changeActive('jquery')"
+      :class="frameworkFilter=='jquery'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'framework', filterValue:'jquery'})"
     >
       <p>JQUERY</p>
     </div>
@@ -32,19 +32,19 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "FrameworkFilter",
   components: {},
   props: {},
-  data() {
-    return {
-      active: "all",
-    };
+  computed: {
+    frameworkFilter() {
+      return this.$store.state.frameworkFilter;
+    },
   },
   methods: {
-    changeActive(filter) {
-      this.active = filter;
-    },
+    ...mapActions(["setFilter"]),
   },
 };
 </script>
