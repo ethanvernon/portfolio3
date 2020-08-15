@@ -2,10 +2,10 @@
   <div class="flex-center color-gray">
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="countryFilter=='any' ? 'underline' : 'no-underline'"
-      @click="setFilter({filterType: 'country', filterValue:'any'})"
+      :class="countryFilter=='any country' ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'country', filterValue:'any country'})"
     >
-      <p>ALL</p>
+      <p>ANY COUNTRY</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"

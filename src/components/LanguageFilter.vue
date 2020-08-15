@@ -2,29 +2,29 @@
   <div class="flex-center color-gray">
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='all' ? 'underline' : 'no-underline'"
-      @click="changeActive('all')"
+      :class="languageFilter=='any language' ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'language', filterValue:'any language'})"
     >
       <p>ALL</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='javascript'  ? 'underline' : 'no-underline'"
-      @click="changeActive('javascript')"
+      :class="languageFilter=='javascript'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'language', filterValue:'javascript'})"
     >
       <p>JAVASCRIPT</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='c#'  ? 'underline' : 'no-underline'"
-      @click="changeActive('c#')"
+      :class="languageFilter=='c#'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'language', filterValue:'c#'})"
     >
       <p>C#</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='python'  ? 'underline' : 'no-underline'"
-      @click="changeActive('python')"
+      :class="languageFilter=='python'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'language', filterValue:'python'})"
     >
       <p>PYTHON</p>
     </div>
@@ -32,19 +32,19 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "LanguageFilter",
   components: {},
   props: {},
-  data() {
-    return {
-      active: "all",
-    };
+  computed: {
+    languageFilter() {
+      return this.$store.state.languageFilter;
+    },
   },
   methods: {
-    changeActive(filter) {
-      this.active = filter;
-    },
+    ...mapActions(["setFilter"]),
   },
 };
 </script>

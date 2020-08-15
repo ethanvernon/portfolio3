@@ -5,17 +5,16 @@
       <span
         class="underline ls-1 uppercase bold"
         @click="setActiveFilter('project')"
-      >{{projectFilter}}</span> projects made in
-      <span v-if="countryFilter=='usa'">{{" "}}the{{" "}}</span>
+      >{{projectFilter}}</span>
+      projects made in
       <span
         class="underline ls-1 uppercase bold"
         @click="setActiveFilter('country')"
-      >{{countryFilter}}</span>
-      <span v-if="countryFilter=='any'">{{" "}}country</span>, in
+      >{{countryFilter}}</span>, in
       <span
         class="underline ls-1 uppercase bold"
         @click="setActiveFilter('language')"
-      >ALL LANGUAGES</span>, with
+      >{{languageFilter}}</span>, with
       <span
         class="underline ls-1 uppercase bold"
         @click="setActiveFilter('framework')"
@@ -41,6 +40,9 @@ export default {
     },
     countryFilter() {
       return this.$store.state.countryFilter;
+    },
+    languageFilter() {
+      return this.$store.state.languageFilter;
     },
   },
   methods: {
