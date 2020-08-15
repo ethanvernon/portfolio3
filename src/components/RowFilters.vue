@@ -2,7 +2,10 @@
   <div>
     <p>
       Viewing
-      <span class="underline ls-1" @click="setActiveFilter('project')">ALL</span> projects made in
+      <span
+        class="underline ls-1 uppercase"
+        @click="setActiveFilter('project')"
+      >{{projectFilter}}</span> projects made in
       <span class="underline ls-1" @click="setActiveFilter('country')">ANY</span> country in
       <span class="underline ls-1" @click="setActiveFilter('language')">ALL LANGUAGES</span>, with
       <span class="underline ls-1" @click="setActiveFilter('framework')">ALL FRAMEWORKS</span>, with
@@ -18,6 +21,11 @@ export default {
   name: "RowFilters",
   components: {},
   props: {},
+  computed: {
+    projectFilter() {
+      return this.$store.state.projectFilter;
+    },
+  },
   methods: {
     ...mapActions(["setActiveFilter"]),
   },
@@ -49,5 +57,9 @@ span:hover {
 
 .ls-1 {
   letter-spacing: 1px;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 </style>

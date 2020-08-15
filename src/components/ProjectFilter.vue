@@ -2,22 +2,22 @@
   <div class="flex-center color-gray">
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='all' ? 'underline' : 'no-underline'"
-      @click="changeActive('all')"
+      :class="projectFilter=='all' ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'project', filterValue:'all'})"
     >
       <p>ALL</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='professional'  ? 'underline' : 'no-underline'"
-      @click="changeActive('professional')"
+      :class="projectFilter=='professional'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'project', filterValue:'professional'})"
     >
       <p>PROFESSIONAL</p>
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="active=='personal'  ? 'underline' : 'no-underline'"
-      @click="changeActive('personal')"
+      :class="projectFilter=='personal'  ? 'underline' : 'no-underline'"
+      @click="setFilter({filterType: 'project', filterValue:'personal'})"
     >
       <p>PERSONAL</p>
     </div>
@@ -25,20 +25,19 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "ProjectFilter",
   components: {},
   props: {},
-  data() {
-    return {
-      active: "all",
-    };
+  computed: {
+    projectFilter() {
+      return this.$store.state.projectFilter;
+    },
   },
   methods: {
-    changeActive(filter) {
-      console.log("changing project filter");
-      this.active = filter;
-    },
+    ...mapActions(["setFilter"]),
   },
 };
 </script>

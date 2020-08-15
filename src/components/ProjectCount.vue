@@ -22,6 +22,7 @@ export default {
 
   p {
     letter-spacing: 2px;
+    padding-bottom: 3px;
   }
 }
 </style>
