@@ -9,7 +9,7 @@
     </div>
     <div
       class="margin-1 cursor-pointer weight-600"
-      :class="frameworkFilter=='vue'  ? 'underline' : 'no-underline'"
+      :class="frameworkFilter=='vue.js'  ? 'underline' : 'no-underline'"
       @click="setFilter({filterType: 'framework', filterValue:'vue.js'})"
     >
       <p>VUE.JS</p>
