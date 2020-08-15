@@ -30,6 +30,57 @@ export default {
           end_date: "2018-05-04",
           team_size: "1",
           project_id: "1",
+          is_pro: "0",
+          technologies: "HTML, CSS",
+          countries: "China",
+        },
+        {
+          name: "ClimateSpy App",
+          description:
+            "A full-stack JavaScript, global temperature tracker with data visualization, authentication, authorization, and multiple screens. Cloud database using MongoDB.",
+          start_date: "2019-06-05",
+          end_date: "2019-07-09",
+          team_size: "2",
+          project_id: "2",
+          is_pro: "0",
+          technologies: "JavaScript, React, HTML, CSS",
+          countries: "China, USA",
+        },
+        {
+          name: "ClimateSpy App",
+          description:
+            "A full-stack JavaScript, global temperature tracker with data visualization, authentication, authorization, and multiple screens. Cloud database using MongoDB.",
+          start_date: "2019-06-05",
+          end_date: "2019-07-09",
+          team_size: "2",
+          project_id: "2",
+          is_pro: "0",
+          technologies: "JavaScript, React, HTML, CSS",
+          countries: "China, USA",
+        },
+        {
+          name: "ClimateSpy App",
+          description:
+            "A full-stack JavaScript, global temperature tracker with data visualization, authentication, authorization, and multiple screens. Cloud database using MongoDB.",
+          start_date: "2019-06-05",
+          end_date: "2019-07-09",
+          team_size: "2",
+          project_id: "2",
+          is_pro: "0",
+          technologies: "JavaScript, React, HTML, CSS",
+          countries: "China, USA",
+        },
+        {
+          name: "ClimateSpy App",
+          description:
+            "A full-stack JavaScript, global temperature tracker with data visualization, authentication, authorization, and multiple screens. Cloud database using MongoDB.",
+          start_date: "2019-06-05",
+          end_date: "2019-07-09",
+          team_size: "2",
+          project_id: "2",
+          is_pro: "0",
+          technologies: "JavaScript, React, HTML, CSS",
+          countries: "China, USA",
         },
       ]);
 
@@ -42,6 +93,21 @@ export default {
           end_date: "2018-05-04",
           team_size: "1",
           project_id: "1",
+          is_pro: "0",
+          technologies: "HTML, CSS",
+          countries: "China",
+        },
+        {
+          name: "ClimateSpy App",
+          description:
+            "A full-stack JavaScript, global temperature tracker with data visualization, authentication, authorization, and multiple screens. Cloud database using MongoDB.",
+          start_date: "2019-06-05",
+          end_date: "2019-07-09",
+          team_size: "2",
+          project_id: "2",
+          is_pro: "0",
+          technologies: "JavaScript, React, HTML, CSS",
+          countries: "China, USA",
         },
       ]);
 

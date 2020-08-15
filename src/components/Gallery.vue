@@ -1,7 +1,7 @@
 <template>
-  <div class="project-container">
+  <div class="project-container row">
     <div
-      class="project"
+      class="project overflow-hidden"
       v-for="(project, index) in projectData"
       :key="index"
     >{{JSON.stringify(project)}}</div>
@@ -30,7 +30,12 @@ export default {
   display: flex;
   align-items: center;
   max-width: 800px;
+  width: 100%;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 </style>
