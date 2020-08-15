@@ -7,6 +7,7 @@
 <script>
 import Home from "@/components/Home.vue";
 import axios from "axios";
+import { mapActions } from "vuex";
 
 export default {
   name: "App",
@@ -14,14 +15,40 @@ export default {
     Home,
   },
   mounted() {
+    let localThis = this;
     axios
       .get("test.php")
       .then(function (response) {
-        console.log("response:", response);
+        console.log("response:", response.data);
+        localThis.setProjectData([
+          {
+            name: "Tribute Page",
+            description:
+              "An HTML/CSS project in CodePen with a timeline detailing the life of Goku.",
+            start_date: "2018-05-04",
+            end_date: "2018-05-04",
+            team_size: "1",
+            project_id: "1",
+          },
+        ]);
+        localThis.setProjectFilteredData([
+          {
+            name: "Tribute Page",
+            description:
+              "An HTML/CSS project in CodePen with a timeline detailing the life of Goku.",
+            start_date: "2018-05-04",
+            end_date: "2018-05-04",
+            team_size: "1",
+            project_id: "1",
+          },
+        ]);
       })
       .catch(function (error) {
         console.log(error);
       });
+  },
+  methods: {
+    ...mapActions(["setProjectData", "setProjectFilteredData"]),
   },
 };
 </script>

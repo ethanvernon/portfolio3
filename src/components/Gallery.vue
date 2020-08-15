@@ -2,50 +2,19 @@
   <div class="project-container">
     <div
       class="project"
-      v-for="(project, index) in projects"
+      v-for="(project, index) in projectData"
       :key="index"
-    ></div>
+    >{{JSON.stringify(project)}}</div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      projects: [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ]
-    };
-  }
+  computed: {
+    projectData() {
+      return this.$store.state.projectData;
+    },
+  },
 };
 </script>
 

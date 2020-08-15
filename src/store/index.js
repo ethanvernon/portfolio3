@@ -11,6 +11,8 @@ export default new Vuex.Store({
     languageFilter: 'any language',
     frameworkFilter: 'any framework',
     teamSizeFilter: 'any # of',
+    projectData: null,
+    projectFilteredData: null
 
   },
   mutations: {
@@ -20,6 +22,8 @@ export default new Vuex.Store({
     setLanguageFilter: (state, val) => (state.languageFilter = val),
     setFrameworkFilter: (state, val) => (state.frameworkFilter = val),
     setTeamSizeFilter: (state, val) => (state.teamSizeFilter = val),
+    setProjectData: (state, data) => (state.projectData = data),
+    setProjectFilteredData: (state, data) => (state.projectFilteredData = data),
   },
   actions: {
     setActiveFilter({ commit }, data) {
@@ -47,6 +51,12 @@ export default new Vuex.Store({
         default:
           return
       }
+    },
+    setProjectData({ commit }, data) {
+      commit('setProjectData', data)
+    },
+    setProjectFilteredData({ commit }, data) {
+      commit('setProjectFilteredData', data)
     }
   },
 })

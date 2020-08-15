@@ -1,6 +1,6 @@
 <template>
   <div class="flex-center">
-    <p>39 / 39</p>
+    <p>{{projectFilteredData.length}} / {{projectData.length}}</p>
   </div>
 </template>
 
@@ -8,6 +8,14 @@
 export default {
   name: "ProjectCount",
   components: {},
+  computed: {
+    projectData() {
+      return this.$store.state.projectData;
+    },
+    projectFilteredData() {
+      return this.$store.state.projectFilteredData;
+    },
+  },
   props: {},
 };
 </script>
